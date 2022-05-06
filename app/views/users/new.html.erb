@@ -1,0 +1,26 @@
+<% provide(:title, 'Регистрация!') %>
+<%= image_tag "back.jpg", class: "background" %>
+<div class = "background"></div>
+<h1><b>Хочу кое-что узнать о Вас</b></h1>
+
+<div class="row vertical-center">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label "Как к Вам обращаться?" %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label "Куда отправлять голубей?" %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label "Тайное слово" %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Не расслышал тайное слово. Повторите!" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Create my account", class: "btn btn-light" %>
+    <% end %>
+  </div>
+</div>

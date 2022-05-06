@@ -1,0 +1,17 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href = "#">
+    Подглядывает за
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+     почитателями
+  </a><br>
+  <a href ="#">
+  Имеет 
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+     почитателей
+  </a>
+</div>

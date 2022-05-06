@@ -1,0 +1,19 @@
+<li id="micropost-<%= quoute.id %>">
+  <%# <%= link_to gravatar_for(quoute.user), quoute.user %> 
+  <span class="content">
+  <div class="user"><%= link_to quoute.user.name, quoute.user %></div>
+  <%= link_to quoute.content, quoute, method: :get, class: "content" %>
+
+  <div class="author">
+    <%= quoute.author %>
+  </div>
+  
+  <div class = "delete"><% if current_user == (quoute.user) %>
+      <%= link_to "Сжечь!", quoute, method: :delete,
+                                       data: { confirm: "Сжигаем?" } %>
+    <% end %></div>
+  
+  </span>
+  
+</li>
+
